@@ -1,6 +1,6 @@
 {
   "name": "dev-tips",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This class has small useful functions which you can use on daily bases",
   "main": "index.js",
   "scripts": {
