@@ -1,0 +1,28 @@
+{
+  "name": "dev-tips",
+  "version": "1.0.0",
+  "description": "This class has small usefull functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smyzin/dev-tips.git"
+  },
+  "keywords": [
+    "filterBy",
+    "unique",
+    "elements",
+    "remove",
+    "dublicates",
+    "debounce",
+    "isEmpty"
+  ],
+  "author": "Sergei Myzin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smyzin/dev-tips/issues"
+  },
+  "homepage": "https://github.com/smyzin/dev-tips#readme"
+}
