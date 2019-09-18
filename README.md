@@ -2,8 +2,8 @@
 
 This is a class with common used functions to simplify developers life. You can use it to improving your workflow on daily based.
 
- - [Russian version](https://github.com/smyzin/dev-tips/blob/master/lang/ru.md)
- - [English version](https://github.com/smyzin/dev-tips/blob/master/lang/en.md)
+ - [Russian instructions](https://github.com/smyzin/dev-tips/blob/master/lang/ru.md)
+ - [English instructions](https://github.com/smyzin/dev-tips/blob/master/lang/en.md)
 
 ## Installation
 
