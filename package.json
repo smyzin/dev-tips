@@ -1,6 +1,6 @@
 {
   "name": "dev-tips",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This class has small useful functions which you can use on daily bases",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smyzin/dev-tips.git"
+    "url": "https://github.com/smyzin/dev-tips.git"
   },
   "keywords": [
     "filterBy",
