@@ -97,18 +97,33 @@ class DevTips{
   * @params object {Object} [default = {}] - object of queries
   * @return {Array} - filtered by query array
   */
-  filterBy(array = [], object = {}){
-    if(this.isEmpty(object)){
-      return array;
-    }
-    let array_of_keys = Object.entries(object), result = array;
-    array_of_keys.forEach(pair => {
-      result = result.filter((item) => {
-        let key = pair[0], value = pair[1];
-        return item[key] === value;
-      });
-    })
-    return result;
+  filterBy(array = [], cb = {}){
+      if(typeof cb === 'function'){
+          return [...array.filter(cb)];
+      }else if(cb && typeof cb === 'object' && cb.constructor === Object){
+          let object = cb;
+          if(this.isEmpty(object)){
+              return array;
+          }
+          let result = array;
+          Object.entries(object).forEach(pair => {
+              result = result.filter((item) => {
+                  return item[pair[0]] === pair[1];
+              });
+          });
+          return result;
+      }else { return array; }
+  }
+  /**
+   * Method count array of object by key:value pair or function query. If `object` is empty, function will return array.length.
+   * You can specify either Object query [1] or function query[2] for deep search.
+   *
+   * @params array {Array} [default = []] - array of Objects
+   * @params object {Object/Function} [default = {}] - object/function of queries
+   * @return {Array} - length of filtered by query array
+   */
+  countBy(array, object = {}){
+      return this.filterBy(array, object).length;
   }
 }
 module.exports = DevTips;
