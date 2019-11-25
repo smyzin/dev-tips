@@ -4,7 +4,8 @@
   "description": "This class has small useful functions which you can use on daily bases",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint ./*.js",
+    "test": "mocha --use_strict"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,15 @@
   "bugs": {
     "url": "https://github.com/smyzin/dev-tips/issues"
   },
-  "homepage": "https://github.com/smyzin/dev-tips#readme"
+  "homepage": "https://github.com/smyzin/dev-tips#readme",
+  "devDependencies": {
+    "assert": "2.0.0",
+    "mocha": "6.2.2",
+    "stringify-clone": "2.0.1",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-standard": "4.0.0"
+  }
 }
