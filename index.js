@@ -5,9 +5,9 @@ class DevTips {
   /**
    * This method find all indexes of value in array and return new array with indexes.
    *
-   * @param array {Array} - array of elements
-   * @param value {String/Number/Boolean} - value which index you want to find elements
-   * @return {Array} - new array of indexes
+   * @param array { Array } - array of elements
+   * @param value { String/Number/Boolean } - value which index you want to find elements
+   * @return { Array } - new array of indexes
    */
   indexOfAll(array, value) {
     return array.reduce((acc, el, i) => (el === value ? [...acc, i] : acc), []);
@@ -16,8 +16,8 @@ class DevTips {
   /**
    * This method removes all repeated values and return an array of unique values.
    *
-   * @param array {Array} - array of elements
-   * @return {Array} - new array of unique values
+   * @param array { Array } - array of elements
+   * @return { Array } - new array of unique values
    */
   getUnique(array) {
     array.forEach((current) => {
@@ -30,10 +30,10 @@ class DevTips {
    * This method removes all repeated values in array and return new array of values without values without settled in function.
    * You can specify any amount of items even if they do not exist.
    *
-   * @param array {Array} - array of elements
-   * @param items
-   * @param ...item {String/Number/Boolean} [default = []] - elements which you want to delete
-   * @return {Array} - new array without specified values
+   * @param array { Array } - array of elements
+   * @param items - list of arguments
+   * @param ...item { String/Number/Boolean } [default = []] - elements which you want to delete
+   * @return { Array } - new array without specified values
    */
   removeRepeated([...array], ...items) {
     for (const i of items) {
@@ -57,8 +57,8 @@ class DevTips {
   /**
    * This method finds and removes all duplicate values leaving them in a single instance.
    *
-   * @param array {Array} - array of elements
-   * @return {Array} - new array without duplicate values
+   * @param array { Array } - array of elements
+   * @return { Array } - new array without duplicate values
    */
   removeDoubles(array) {
     return [...new Set(array)];
@@ -68,10 +68,10 @@ class DevTips {
    * Method debounce delay function {func} execution for a specified time {wait} in milliseconds once.
    * If you want to execute function emergency, you should set this {immediate} params.
    *
-   * @params func {Function} - callback function
-   * @params wait {Number} [default = 0] - waiting time in milliseconds
-   * @params immediate {Boolean} [default = false] - should call function emergency
-   * @return {Function} - callback
+   * @params func { Function } - callback function
+   * @params wait { Number } [default = 0] - waiting time in milliseconds
+   * @params immediate { Boolean } [default = false] - should call function emergency
+   * @return { Function } - callback
    */
   debounce(func, wait = 0, immediate = false) {
     let timeout;
@@ -92,8 +92,8 @@ class DevTips {
   /**
    * Method check if Array/Object id empty. If empty it will return true, else false.
    *
-   * @params element {Array/Object} [default = null] - your element
-   * @return {Boolean} - true if empty, false if not
+   * @params element { Array/Object } [default = null] - your element
+   * @return { Boolean } - true if empty, false if not
    */
   isEmpty(element = null) {
     if (element && (Array.isArray(element) || (typeof element === 'object' && element !== null))) {
@@ -105,9 +105,9 @@ class DevTips {
   /**
    * Method filter array by object query. If Object is empty or not an Object, function will return  user's array.
    *
-   * @params array {Array} [default = []] - array of Objects
-   * @params object {Object} [default = {}] - object of queries
-   * @return {Array} - filtered by query array
+   * @params array { Array } [default = []] - array of Objects
+   * @params object { Object } [default = {}] - object of queries
+   * @return { Array } - filtered by query array
    */
   filterBy(array = [], cb = {}) {
     if (typeof cb === 'function') {
@@ -133,12 +133,28 @@ class DevTips {
    * Method count array of object by key:value pair or function query. If `object` is empty, function will return array.length.
    * You can specify either Object query [1] or function query[2] for deep search.
    *
-   * @params array {Array} [default = []] - array of Objects
-   * @params object {Object/Function} [default = {}] - object/function of queries
-   * @return {Number} - length of filtered by query array
+   * @params array { Array } [default = []] - array of Objects
+   * @params object { Object/Function } [default = {}] - object/function of queries
+   * @return { Number } - length of filtered by query array
    */
   countBy(array, object = {}) {
     return this.filterBy(array, object).length;
+  }
+
+  /**
+   * Method add pattern to original string to the end or to the start of string.
+   *
+   * @params str { String } [default = ''] - original string
+   * @params pattern { String } [default = ''] - pattern which you want to add
+   * @params amount { Number } [default = pattern.length] - amount of characters you want to repeat your pattern
+   * @params position { String} [default = 'end'] - where add pattern
+   * @return { String } - length of filtered by query array
+   */
+  addPattern(str = '', pattern = '', amount = pattern.length, position = 'end'){
+      if(typeof str !== 'string'){
+          throw new Error('This method works only for strings');
+      }
+      return position === 'start' ? str.padStart(str.length + amount, pattern) :  str.padEnd(str.length + amount, pattern);
   }
 }
 
