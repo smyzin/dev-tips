@@ -162,6 +162,31 @@ let result2 = _dt.countBy(array, (el) => {
 // => [2]: 2
 ```
 
+#### addPattern
+Method add pattern to original string to the end or to the start of string.
+
+You can specify the number of characters which will return the function.
+
+`@params str { String } [default = ''] - original string`
+
+`@params pattern { String } [default = ''] - pattern which you want to add`
+
+`@params amount { Number } [default = pattern.length] - length of string to return`
+
+`@params position { String} [default = 'end'] - where to add pattern`
+
+`@return { String } - original string with pattern`
+
+```js
+let str1 = '123';
+let str2 = '9';
+
+let result1 = _dt.addPattern(str1, 0, 4, 'start');
+let result2 = _dt.addPattern(str2, 0, 4, 'start');
+// => [result1]: 0123
+// => [result2]: 0009
+```
+
 #### debounce*
 Method debounce delay function {func} execution for a specified time {wait} in milliseconds once. If you want to execute function emergency, you should set this {immediate} params.
 
