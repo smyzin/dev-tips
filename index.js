@@ -143,18 +143,19 @@ class DevTips {
 
   /**
    * Method add pattern to original string to the end or to the start of string.
+   * You can specify the number of characters which will return the function.
    *
    * @params str { String } [default = ''] - original string
    * @params pattern { String } [default = ''] - pattern which you want to add
-   * @params amount { Number } [default = pattern.length] - amount of characters you want to repeat your pattern
-   * @params position { String} [default = 'end'] - where add pattern
-   * @return { String } - length of filtered by query array
+   * @params amount { Number } [default = pattern.length] - length of string to return
+   * @params position { String} [default = 'end'] - where to add pattern
+   * @return { String } - original string with pattern
    */
   addPattern(str = '', pattern = '', amount = pattern.length, position = 'end'){
       if(typeof str !== 'string'){
           throw new Error('This method works only for strings');
       }
-      return position === 'start' ? str.padStart(str.length + amount, pattern) :  str.padEnd(str.length + amount, pattern);
+      return position === 'start' ? str.padStart(amount, pattern) :  str.padEnd(amount, pattern);
   }
 }
 
