@@ -28,7 +28,7 @@
   "homepage": "https://github.com/smyzin/dev-tips#readme",
   "devDependencies": {
     "assert": "2.0.0",
-    "mocha": "6.2.2",
+    "mocha": "10.2.0",
     "stringify-clone": "2.0.1",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
